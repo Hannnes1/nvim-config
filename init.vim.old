@@ -1,0 +1,6 @@
+set softtabstop=2
+set shiftwidth=2
+set colorcolumn=120
+set winheight=45
+set signcolumn=yes
+set scrolloff=5
