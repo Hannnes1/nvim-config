@@ -46,4 +46,4 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- exit terminal mode easier.
-vim.keymap.set("t", "<C-q>", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
