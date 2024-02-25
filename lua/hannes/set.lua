@@ -6,7 +6,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
-vim.opt.winheight = 45
+vim.opt.winheight = 55
 
 vim.opt.signcolumn = 'yes'
 
@@ -30,4 +30,5 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+vim.opt.textwidth = 120
 vim.opt.colorcolumn = "120"
