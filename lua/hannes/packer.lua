@@ -70,4 +70,6 @@ return require('packer').startup(function(use)
   }
 
   use('tomtom/tcomment_vim')
+
+  use('norcalli/nvim-colorizer.lua')
 end)

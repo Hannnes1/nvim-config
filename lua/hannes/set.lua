@@ -6,7 +6,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
-vim.opt.winheight = 55
+vim.opt.winheight = math.floor(vim.o.lines * 0.75)
 
 vim.opt.signcolumn = 'yes'
 
