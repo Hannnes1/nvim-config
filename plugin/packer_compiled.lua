@@ -191,6 +191,11 @@ _G.packer_plugins = {
     path = "/Users/hannes/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  tcomment_vim = {
+    loaded = true,
+    path = "/Users/hannes/.local/share/nvim/site/pack/packer/start/tcomment_vim",
+    url = "https://github.com/tomtom/tcomment_vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/hannes/.local/share/nvim/site/pack/packer/start/telescope.nvim",
