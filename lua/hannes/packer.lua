@@ -52,13 +52,13 @@ return require('packer').startup(function(use)
 
   use('tpope/vim-surround')
 
-  use {
-    'akinsho/flutter-tools.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
-    },
-  }
+  -- use {
+  --   'akinsho/flutter-tools.nvim',
+  --   requires = {
+  --     'nvim-lua/plenary.nvim',
+  --     'stevearc/dressing.nvim',
+  --   },
+  -- }
 
   use('github/copilot.vim');
 
