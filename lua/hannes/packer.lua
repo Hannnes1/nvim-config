@@ -1,13 +1,19 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+-- Check if we are running in vscode.
+local no_vscode = function()
+  return vim.g.vscode == nil
+end
+
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    requires = { { 'nvim-lua/plenary.nvim' } }
+    requires = { { 'nvim-lua/plenary.nvim' } },
+    cond = no_vscode
   }
 
   use({
@@ -15,17 +21,30 @@ return require('packer').startup(function(use)
     as = 'rose-pine',
     config = function()
       vim.cmd('colorscheme rose-pine')
-    end
+    end,
+    cond = no_vscode
   })
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    cond = no_vscode
   }
 
-  use('theprimeagen/harpoon')
-  use('mbbill/undotree')
-  use('tpope/vim-fugitive')
+  use {
+    'theprimeagen/harpoon',
+    cond = no_vscode
+  }
+
+  use {
+    'mbbill/undotree',
+    cond = no_vscode
+  }
+
+  use {
+    'tpope/vim-fugitive',
+    cond = no_vscode
+  }
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -47,26 +66,21 @@ return require('packer').startup(function(use)
       -- Snippets
       { "L3MON4D3/LuaSnip" },
       { "rafamadriz/friendly-snippets" },
-    }
+    },
+    cond = no_vscode
   }
 
   use('tpope/vim-surround')
 
-  -- use {
-  --   'akinsho/flutter-tools.nvim',
-  --   requires = {
-  --     'nvim-lua/plenary.nvim',
-  --     'stevearc/dressing.nvim',
-  --   },
-  -- }
-
-  use('github/copilot.vim');
-
-  use('kassio/neoterm')
+  use {
+    'github/copilot.vim',
+    cond = no_vscode
+  };
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    cond = no_vscode
   }
 
   use('tomtom/tcomment_vim')
