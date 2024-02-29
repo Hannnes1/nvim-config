@@ -84,4 +84,9 @@ return require('packer').startup(function(use)
   }
 
   use('tomtom/tcomment_vim')
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    cond = no_vscode
+  }
 end)
