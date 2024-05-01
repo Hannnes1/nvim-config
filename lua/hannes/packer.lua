@@ -85,4 +85,9 @@ return require('packer').startup(function(use)
     'lukas-reineke/indent-blankline.nvim',
     cond = no_vscode
   }
+
+  use {
+    'm4xshen/autoclose.nvim',
+    cond = no_vscode
+  }
 end)
