@@ -45,5 +45,7 @@ if vim.g.vscode == nil then
   vim.keymap.set("n", "Q", "<nop>")
 
   -- Format current file.
-  vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+  vim.keymap.set("n", "<leader>f", function()
+    require("conform").format({ lsp_format = "prefer" })
+  end)
 end

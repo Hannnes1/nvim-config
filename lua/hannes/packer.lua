@@ -90,4 +90,9 @@ return require('packer').startup(function(use)
     'm4xshen/autoclose.nvim',
     cond = no_vscode
   }
+
+  use {
+    "stevearc/conform.nvim",
+    cond = no_vscode
+  }
 end)
