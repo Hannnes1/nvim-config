@@ -32,7 +32,6 @@ if vim.g.vscode == nil then
 
   vim.opt.updatetime = 50
 
-  vim.opt.textwidth = 120
   vim.opt.colorcolumn = "120"
 
   -- Hot reload Flutter on save.
