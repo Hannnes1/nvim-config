@@ -52,3 +52,12 @@ if vim.g.vscode == nil then
     require("conform").format({ lsp_format = "prefer" })
   end)
 end
+
+if vim.g.vscode ~= nil then
+  local vscode = require("vscode")
+
+  -- Format current file (without conform).
+  vim.keymap.set("n", "<leader>f", function()
+    vscode.action("editor.action.formatDocument")
+  end)
+end
