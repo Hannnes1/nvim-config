@@ -41,6 +41,9 @@ if vim.g.vscode == nil then
   -- Make it rain
   vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
+  -- Make it rain
+  vim.keymap.set("n", "<leader>gl", "<cmd>CellularAutomaton game_of_life<CR>");
+
   -- Disable Q.
   vim.keymap.set("n", "Q", "<nop>")
 

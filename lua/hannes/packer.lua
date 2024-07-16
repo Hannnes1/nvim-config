@@ -92,7 +92,12 @@ return require('packer').startup(function(use)
   }
 
   use {
-    "stevearc/conform.nvim",
+    'stevearc/conform.nvim',
+    cond = no_vscode
+  }
+
+  use {
+    'eandrju/cellular-automaton.nvim',
     cond = no_vscode
   }
 end)
