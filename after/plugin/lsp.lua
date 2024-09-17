@@ -3,6 +3,7 @@ if vim.g.vscode then
 end
 
 local lsp_zero = require('lsp-zero')
+local luasnip = require('luasnip')
 
 lsp_zero.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
@@ -24,7 +25,7 @@ end)
 -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'tsserver', 'eslint', 'lua_ls', 'gopls', 'html', 'htmx', 'cssls', 'templ', 'tailwindcss' },
+  ensure_installed = { 'eslint', 'lua_ls', 'gopls', 'html', 'htmx', 'cssls', 'templ', 'tailwindcss' },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()
@@ -45,9 +46,21 @@ require('lspconfig').dartls.setup({
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
--- this is the function that loads the extra snippets to luasnip
--- from rafamadriz/friendly-snippets
 require('luasnip.loaders.from_vscode').lazy_load()
+require('luasnip.loaders.from_vscode').lazy_load({
+  paths = {
+    '~/.config/nvim/snippets/riverpod',
+  },
+})
+
+vim.keymap.set({"i", "s"}, "<C-L>", function() luasnip.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-H>", function() luasnip.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function()
+	if luasnip.choice_active() then
+		luasnip.change_choice(1)
+	end
+end, {silent = true})
 
 cmp.setup({
   sources = {

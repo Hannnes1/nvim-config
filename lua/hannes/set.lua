@@ -35,10 +35,10 @@ if vim.g.vscode == nil then
   vim.opt.colorcolumn = "120"
 
   -- Hot reload Flutter on save.
-  vim.api.nvim_exec([[
-  augroup DartAutoCmd
-    autocmd!
-    autocmd BufWritePost *.dart silent! !kill -SIGUSR1 $(pgrep -f "[f]lutter_tool.*run") > /dev/null 2>&1
-  augroup END
-  ]], false)
+  -- vim.api.nvim_exec([[
+  -- augroup DartAutoCmd
+  --   autocmd!
+  --   autocmd BufWritePost *.dart silent! !kill -SIGUSR1 $(pgrep -f "[f]lutter_tool.*run") > /dev/null 2>&1
+  -- augroup END
+  -- ]], false)
 end
