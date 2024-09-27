@@ -32,7 +32,7 @@ if vim.g.vscode == nil then
 
   vim.opt.updatetime = 50
 
-  vim.opt.colorcolumn = "120"
+  vim.opt.colorcolumn = "80,120"
 
   -- Hot reload Flutter on save.
   -- vim.api.nvim_exec([[
