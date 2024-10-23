@@ -35,13 +35,25 @@ require('mason-lspconfig').setup({
   }
 })
 
-require('lspconfig').dartls.setup({
+local nvim_lsp = require('lspconfig')
+
+nvim_lsp.dartls.setup({
   settings = {
     dart = {
       lineLength = 120,
     },
   },
 })
+
+nvim_lsp.denols.setup {
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
+nvim_lsp.ts_ls.setup {
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  single_file_support = false
+}
+
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
