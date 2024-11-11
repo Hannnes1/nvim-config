@@ -95,4 +95,9 @@ return require('packer').startup(function(use)
     'eandrju/cellular-automaton.nvim',
     cond = no_vscode
   }
+
+  use {
+    'tpope/vim-abolish',
+    cond = no_vscode
+  }
 end)
