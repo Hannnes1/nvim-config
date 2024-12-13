@@ -27,6 +27,12 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Search and replace current keyword.
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Quickfix list
+vim.keymap.set("n", "<leader>q", ":copen<CR>")
+vim.keymap.set("n", "<leader>Q", ":cclose<CR>")
+vim.keymap.set("n", "<leader>n", ":cnext<CR>")
+vim.keymap.set("n", "<leader>p", ":cprev<CR>")
+
 vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
